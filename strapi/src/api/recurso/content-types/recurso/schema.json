@@ -1,0 +1,38 @@
+{
+  "kind": "collectionType",
+  "collectionName": "recursos",
+  "info": {
+    "singularName": "recurso",
+    "pluralName": "recursos",
+    "displayName": "Recurso"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "titulo": {
+      "type": "string"
+    },
+    "descripcion": {
+      "type": "text"
+    },
+    "fecha": {
+      "type": "date"
+    },
+    "url": {
+      "type": "string"
+    },
+    "imagen": {
+      "type": "string"
+    },
+    "tipo": {
+      "type": "enumeration",
+      "enum": [
+        "articulo",
+        "video",
+        "libro"
+      ]
+    }
+  }
+}
