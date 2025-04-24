@@ -104,7 +104,7 @@ function ResourcePage() {
         <p>Publicado el {resource.attributes.fecha}</p>
         <div className='relative w-full h-64 md:h-96'>
           <Image
-            src={`/${resource.attributes.imagen}.jpg`}
+            src={`/${resource.attributes.imagen}`}
             alt=''
             fill
             className='rounded-md object-cover'
@@ -119,9 +119,10 @@ function ResourcePage() {
         <Link
           href={resource.attributes.url}
           target='_blank'
-          className=' rounded-lg px-4 py-2 self-start bg-cyan-500 text-white hover:bg-cyan-400 transition-colors duration-300'
+          className='flex gap-4 text-sm rounded-lg px-4 py-2 self-start bg-cyan-500 text-white hover:bg-cyan-400 transition-colors duration-300'
         >
           Ver Recurso
+          <Image src='/link.svg' alt='' width={20} height={20} />
         </Link>
       </section>
     </main>

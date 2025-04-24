@@ -13,11 +13,14 @@ export type ResourceCardProps = {
 function ResourceCard({ title, description, type, date }: ResourceCardProps) {
   return (
     <>
-      <div className='flex justify-between items-center'>
-        <h2 className='font-bold'>{title}</h2>
-        <div>
+      <div className='flex items-center'>
+        <div className='flex flex-col gap-1'>
+          <h2 className='font-bold'>{title}</h2>
+          <p className='text-sm'>{description}</p>
+        </div>
+        <div className='self-start'>
           <p
-            className={`text-sm rounded-2xl px-2 flex justify-center gap-1 ${
+            className={`text-sm rounded-2xl px-4 flex justify-center gap-1 ${
               type === "video" && "bg-red-300"
             } ${type === "articulo" && "bg-cyan-300"} ${
               type === "libro" && "bg-amber-300"
@@ -28,8 +31,7 @@ function ResourceCard({ title, description, type, date }: ResourceCardProps) {
           </p>
         </div>
       </div>
-      <p>{description}</p>
-      <p>Publicado el {date}</p>
+      <p className='text-sm font-bold'>Publicado el {date}</p>
     </>
   )
 }
