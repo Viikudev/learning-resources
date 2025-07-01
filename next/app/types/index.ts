@@ -1,12 +1,9 @@
 export type ResourceProps = {
-  attributes: {
-    descripcion: string
-    id: number
-    fecha: string
-    tipo: string
-    titulo: string
-    url: string
-    imagen: string
-  }
+  description: string
   id: number
+  created_at: Date
+  type: string
+  name: string
+  url: string
+  image_url: string
 }

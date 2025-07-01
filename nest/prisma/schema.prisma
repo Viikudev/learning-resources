@@ -1,0 +1,27 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+/// This model or at least one of its fields has comments in the database, and requires an additional setup for migrations: Read more: https://pris.ly/d/database-comments
+/// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
+model Resource {
+  id          Int          @id(map: "resources_pkey") @default(autoincrement()) @db.SmallInt
+  name        String       @db.VarChar
+  description String
+  created_at  DateTime     @db.Date
+  type        resourcetype
+  image_url   String       @db.VarChar
+  url         String       @db.VarChar
+}
+
+enum resourcetype {
+  articulo
+  libro
+  video
+}
